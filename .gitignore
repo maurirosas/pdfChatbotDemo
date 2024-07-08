@@ -5,7 +5,6 @@
 /djangopdfchatbot/__pycache__/
 /chatbot/__pycache__/
 /chatbot/migrations/
-/chatbot/raw-pdfs/
 # Ignore archivos de recursos estáticos y compilados
 /staticfiles/
 /media/

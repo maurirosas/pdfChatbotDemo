@@ -1,0 +1,237 @@
+
+<!DOCTYPE html> 
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59303DKBJ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-59303DKBJ7');
+</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Missing Page - Board Game Capital</title>
+	<meta name="rating" content="general">
+	<meta name="author" content="Board Game Capital">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <link href="https://www.boardgamecapital.com/2new-styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.boardgamecapital.com/2mobile.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-32.png" sizes="32x32">
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-57.png" sizes="57x57">
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-76.png" sizes="76x76">
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-96.png" sizes="96x96">
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-128.png" sizes="128x128">
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-192.png" sizes="192x192">
+	<link rel="icon" href="https://www.boardgamecapital.com/game_images/favicon-228.png" sizes="228x228">
+	<!-- Android -->
+	<link rel="shortcut icon" sizes="196x196" href="https://www.boardgamecapital.com/game_images/favicon-196.png">
+	<!-- iOS -->
+	<link rel="apple-touch-icon" href="https://www.boardgamecapital.com/game_images/favicon-120.png" sizes="120x120">
+	<link rel="apple-touch-icon" href="https://www.boardgamecapital.com/game_images/favicon-152.png" sizes="152x152">
+	<link rel="apple-touch-icon" href="https://www.boardgamecapital.com/game_images/favicon-180.png" sizes="180x180">
+	<!-- Windows 8 IE 10-->
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="game_images/favicon-144.png">
+	<!-- Windows 8.1 + IE11 and above -->
+	<meta name="msapplication-config" content="game_images/browserconfig.xml" />
+</head>
+
+<body>
+
+<div class="wrapper">
+        <div class="topsite">
+            <div class="sitewidth">
+                <!-- overlay !-->
+                <div id="search" class="fade">
+                    <a href="#" class="close-btn close" id="close-search">
+                    </a>
+                    <p>Find a game...</p>
+                    <form method="get" action="https://www.boardgamecapital.com/search.htm">
+                    <input placeholder="type here" id="searchbox" type="text" name="search" />
+                    <input type="submit" value="Search" id="submit"></form>
+                    <div class="advancedsearchbtn"><a href="https://www.boardgamecapital.com/advanced-search.htm">(Advanced Search)</a></div>
+                </div>
+                <!--- /overlay -->
+                <nav role="navigation">
+                    <div id="menuToggle">
+                        <a href="https://www.boardgamecapital.com"><img src="https://www.boardgamecapital.com/game_images/logo.png" class="logo" border="0" width="245" height="200" alt="Board Game Capital"></a>
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu">
+                            <a href="https://www.boardgamecapital.com/advertise.htm">
+                                <li>ADVERTISE</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/board-game-rules.htm">
+                                <li>BOARD GAMES</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/board-game-giveaways.htm">
+                                <li>GAME GIVEAWAYS</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/party-game-rules.htm">
+                                <li>PARTY GAMES</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/game-reviews.htm">
+                                <li>GAME REVIEWS</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/dice-card-game-rules.htm">
+                                <li>DICE/CARD GAMES</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/contact-us.htm">
+                                <li>CONTACT US</li>
+                            </a>
+                            <a href="https://www.boardgamecapital.com/childrens-game-rules.htm">
+                                <li>CHILDREN'S GAMES</li>
+                            </a>
+                        </ul>
+                </nav>
+                <div class="mobile-search">
+                    <a href='#search'>
+                        <!-- Here's the inline SVG icon -->
+                        <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+                            <title id="title">Search games</title>
+                            <desc id="desc">search games</desc>
+                            <g class="search-path" fill="none" stroke="#fab737">
+                                <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" stroke-width="2" />
+                                <circle cx="8" cy="8" r="7" stroke-width="2" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="toplinks">
+                    <a href="https://www.boardgamecapital.com/advertise.htm" class="toplinks">ADVERTISE</a>
+                    <div class="vline"></div>
+                    <a href="https://www.boardgamecapital.com/board-game-giveaways.htm" class="toplinks">GAME GIVEAWAYS</a>
+                    <div class="vline"></div>
+                    <a href="https://www.boardgamecapital.com/game-reviews.htm" class="toplinks">GAME REVIEWS</a>
+                    <div class="vline"></div>
+                    <a href="https://www.boardgamecapital.com/contact-us.htm" class="toplinks">CONTACT US</a>
+                    <br><a href="https://www.facebook.com/boardgamecapital/" target="_blank" rel="nofollow"><img src="https://www.boardgamecapital.com/game_images/facebookc.jpg" class="social" border="0" width="35" height="35" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/boardgamecapital/" target="_blank" rel="nofollow"><img src="https://www.boardgamecapital.com/game_images/instagramc.jpg" class="social" border="0" width="35" height="35" alt="Instagram"></a>
+                    <a href="https://www.boardgamecapital.com"><img src="https://www.boardgamecapital.com/game_images/logo.png" class="logo" border="0" width="245" height="200" alt="Board Game Capital"></a>
+                </div>
+                <div class="mainheadertext">When board games are your Friday night out!</div>
+                <div class="mainimage0">
+                    <div class="indexsearchbackground">
+                        <div class="indexsearch">Find a game...
+                            <form method="get" action="https://www.boardgamecapital.com/search.htm">
+                                <input type="text" width="15" class="searchinput" name="search"><br>
+                                <div class="advancedsearchlink"><a href="https://www.boardgamecapital.com/advanced-search.htm" class="advancedsearch2">(Advanced Search)</a></div><br /><input type="submit" value="SEARCH" class="searchbutton">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="board-games">
+                    <a href="https://www.boardgamecapital.com/board-game-rules.htm" class="category">BOARD GAMES</a>&nbsp;
+                    <a href="https://www.boardgamecapital.com/party-game-rules.htm" class="category">PARTY GAMES</a>&nbsp;
+                    <a href="https://www.boardgamecapital.com/dice-card-game-rules.htm" class="category">DICE/CARD GAMES</a>&nbsp;
+                    <a href="https://www.boardgamecapital.com/childrens-game-rules.htm" class="category">CHILDREN'S GAMES</a>
+                </div>
+            </div>
+        </div>
+        <div class="mainsite">
+            <div class="sitewidth">
+                <div class="content">
+
+
+
+
+    	
+
+          
+        	<div class="contentboxes">
+            	<div class="h1text">
+            	<h1>This Page Has Gone Missing...</h1><hr class="hrinfo" /><br /><br /><br /><br /><center><font size="+2"><b>- Woops! -</b></font><br /><br />
+				<img src="https://www.boardgamecapital.com/game_images/pieces2.jpg" width="89" height="165" align="right" /><img src="https://www.boardgamecapital.com/game_images/die.jpg" width="92" height="103" align="left" />Looks like we have messed up somewhere and the page you have come looking for has gone missing.  We apologize for this inconvenience and hope you can find what you are looking for somewhere else on the site.<br />
+				<br /><font size="+1"><b><a href="https://www.boardgamecapital.com">Try browsing the rest of the site.</a></b></font><br /><br /><br /><br /><br />
+				<br /><br /></center>
+                	
+                    
+                    
+                	</div>
+                </div>
+           </div>
+           
+
+</div>
+                
+                <div class="clear-both"></div>
+            </div>
+        </div>
+        <div class="bottomsite">&copy;2024 <b>Board Game Capital</b> - <a href="https://www.boardgamecapital.com/about-us.htm" class="aboutuslink">About Us</a>
+            <div class="socialicons">
+                <a href="#"><img src="https://www.boardgamecapital.com/game_images/facebook-round-color.svg" alt="facebook"></a>
+                <a href="#"><img src="https://www.boardgamecapital.com/game_images/instagram-square-color.svg" alt="instagram"></a>
+            </div>
+        </div>
+       
+    </div>
+    
+    
+    
+<script type="application/javascript">
+function closestickyAds()
+{
+  var v = document.getElementById("foxads");
+  v.style.display = "none";
+}
+function closestickyAdsMobile()
+{
+  var v = document.getElementById("foxads2");
+  v.style.display = "none";
+}
+</script>    
+
+<div class="desktopbanner">
+<div id="foxads">
+  <div class='sticky-ads' id='sticky-ads'>
+    <div class='sticky-ads-close'><button id="foxCloseBtn" onclick="closestickyAds();" class="close-ad">X</button></div>
+    <div class='sticky-ads-content'>
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- BGC Top Banner --><ins class="adsbygoogle"style="display:inline-block;width:728px;height:90px"data-ad-client="ca-pub-9094214204202979"data-ad-slot="7489415355"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>  
+    
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<div class="mobilebanner">    
+<div id="foxads2">
+  <div class='sticky-ads' id='sticky-ads'>
+    <div class='sticky-ads-close'><button id="foxCloseBtn" onclick="closestickyAdsMobile();" class="close-ad">X</button></div>
+    <div class='sticky-ads-content'>
+
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094214204202979"
+     crossorigin="anonymous"></script>
+<!-- BGC Horizontal Banner MF -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:310px;height:90px"
+     data-ad-client="ca-pub-9094214204202979"
+     data-ad-slot="9990746256"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>    
+    
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+<br /><br /><br /><br /><br /><br />
+
+</body>
+
+</html>
+
+
+

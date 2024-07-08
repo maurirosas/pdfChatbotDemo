@@ -10,7 +10,7 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 
 from .utils import load_document, MEMORY
 
-open_ai_api_key = ""
+open_ai_api_key = "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"
 
 #Specify Model
 LLM = ChatOpenAI(
