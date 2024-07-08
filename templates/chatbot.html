@@ -1,0 +1,490 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1B263B;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .chat-header {
+    font-weight: 600;
+    font-style: normal;
+    background-color: #1B263B;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .messages-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #e0e1dd;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .messages-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .message {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    max-width: 80%;
+  }
+
+  .message-text {
+    padding: 15px;
+    border-radius: 20px;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .sent {
+    background-color: #415a77;
+    color: white;
+    align-self: flex-end;
+  }
+
+  .received {
+    background-color: #f1f0f0;
+    color: #333;
+  }
+
+  .message-sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .message-form {
+    display: none;
+    padding: 20px;
+    background-color: #1B263B;
+    border-top: 1px solid #ccc;
+  }
+
+  .message-input {
+    flex: 1;
+    padding: 10px;
+    background-color: #1B263B;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .btn-send {
+    padding: 10px 20px;
+    background-color: #415a77;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .btn-send:hover {
+    background-color: #778da9;
+  }
+
+  .btn-select-game {
+    padding: 10px 20px;
+    background-color: #415a77;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 20px auto;
+  }
+
+  .btn-select-game:hover {
+    background-color: #778da9;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .category-btn {
+    padding: 10px 20px;
+    background-color: #415a77;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .category-btn:hover {
+    background-color: #778da9;
+  }
+
+  .pdf-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .pdf-item {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .pdf-item:hover {
+    background-color: #e1e1e1;
+  }
+
+  .pdf-container {
+    display: none;
+  }
+
+  #searchInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#pdfList {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.pdf-button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: left;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+.pdf-button:hover {
+  background-color: #ddd;
+}
+
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 12px solid #f3f3f3;
+  border-top: 12px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+  <div class="chat-header">Boardgame Chatbot</div>
+  <div class="messages-box">
+    <ul class="messages-list">
+      <li class="message received">
+        <div class="message-text">
+          <div class="message-sender">
+            <b>AI Chatbot</b>
+          </div>
+          <div class="message-content">
+            Hi, I am your AI Chatbot, you can ask me anything.
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button class="btn-select-game" onclick="openModal()">Select a Game</button>
+  <form class="message-form">
+    {% csrf_token %}
+    <input type="text" class="message-input" placeholder="Type your message...">
+    <button type="submit" class="btn-send">Send</button>
+  </form>
+</div>
+
+<div id="gameModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Select Game Category</h2>
+    <input type="text" id="searchInput" onkeyup="filterPDFs()" placeholder="Search a Game...">
+    <div id="pdfList"></div>
+    <div id="categoryButtons">
+      <div>
+        <button class="category-btn" onclick="togglePDFContainer('board-games')">Board Games</button>
+        <div id="board-games" class="pdf-container">
+          <ul class="pdf-list" id="board-games-list"></ul>
+        </div>
+      </div>
+      <div>
+        <button class="category-btn" onclick="togglePDFContainer('children-games')">Children Games</button>
+        <div id="children-games" class="pdf-container">
+          <ul class="pdf-list" id="children-games-list"></ul>
+        </div>
+      </div>
+      <div>
+        <button class="category-btn" onclick="togglePDFContainer('dice-games')">Dice Games</button>
+        <div id="dice-games" class="pdf-container">
+          <ul class="pdf-list" id="dice-games-list"></ul>
+        </div>
+      </div>
+      <div>
+        <button class="category-btn" onclick="togglePDFContainer('party-games')">Party Games</button>
+        <div id="party-games" class="pdf-container">
+          <ul class="pdf-list" id="party-games-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="loadingSpinner" class="loading-spinner" style="display: none;">
+  <div class="spinner"></div>
+</div>
+
+<script>
+let allPDFs = [];
+
+function openModal() {
+  document.getElementById("gameModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("gameModal").style.display = "none";
+}
+
+function togglePDFContainer(category) {
+  const container = document.getElementById(category);
+  const isVisible = container.style.display === 'block';
+  document.querySelectorAll('.pdf-container').forEach(el => el.style.display = 'none');
+  if (!isVisible) {
+    loadPDFs(category);
+    container.style.display = 'block';
+  }
+}
+
+function loadPDFs(category) {
+  fetch(`/load_pdfs/${category}/`)
+    .then(response => response.json())
+    .then(data => {
+      const pdfs = data.pdfs.map(pdf => ({ category, pdf }));
+      allPDFs = allPDFs.concat(pdfs);
+      displayPDFs(pdfs, category);
+    });
+}
+
+function displayPDFs(pdfs, category) {
+  const list = document.getElementById(`${category}-list`);
+  list.innerHTML = '';
+  pdfs.forEach(({ pdf }) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = pdf;
+    listItem.classList.add('pdf-item');
+    listItem.onclick = () => selectPDF(`${category}/${pdf}`);
+    list.appendChild(listItem);
+  });
+}
+
+function filterPDFs() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  const pdfList = document.getElementById('pdfList');
+  pdfList.innerHTML = '';
+
+  if (searchTerm) {
+    document.getElementById('categoryButtons').style.display = 'none';
+    const filteredPDFs = allPDFs.filter(({ pdf }) => pdf.toLowerCase().includes(searchTerm));
+    filteredPDFs.forEach(({ category, pdf }) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = pdf;
+      listItem.classList.add('pdf-item');
+      listItem.onclick = () => selectPDF(`${category}/${pdf}`);
+      pdfList.appendChild(listItem);
+    });
+  } else {
+    document.getElementById('categoryButtons').style.display = 'block';
+  }
+}
+
+function showLoadingSpinner() {
+  document.getElementById('loadingSpinner').style.display = 'flex';
+}
+
+function hideLoadingSpinner() {
+  document.getElementById('loadingSpinner').style.display = 'none';
+}
+
+function selectPDF(pdfPath) {
+  showLoadingSpinner();
+  fetch('/select_pdf/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+      'pdf_path': pdfPath
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    hideLoadingSpinner();
+    if (data.status === 'success') {
+      closeModal();
+      document.querySelector('.message-form').style.display = 'flex';
+      document.querySelector('.btn-select-game').style.display = 'none';
+    } else {
+      alert('Failed to select PDF');
+    }
+  });
+}
+
+const messagesList = document.querySelector('.messages-list');
+const messageForm = document.querySelector('.message-form');
+const messageInput = document.querySelector('.message-input');
+
+messageForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const message = messageInput.value.trim();
+  if (message.length === 0) {
+    return;
+  }
+
+  const messageItem = document.createElement('li');
+  messageItem.classList.add('message', 'sent');
+  messageItem.innerHTML = `
+    <div class="message-text">
+      <div class="message-sender">
+        <b>You</b>
+      </div>
+      <div class="message-content">
+        ${message}
+      </div>
+    </div>`;
+  messagesList.appendChild(messageItem);
+
+  messageInput.value = '';
+
+  fetch('', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+      'message': message
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    const response = data.response;
+    const messageItem = document.createElement('li');
+    messageItem.classList.add('message', 'received');
+    messageItem.innerHTML = `
+      <div class="message-text">
+        <div class="message-sender">
+          <b>AI Chatbot</b>
+        </div>
+        <div class="message-content">
+          ${response}
+        </div>
+      </div>`;
+    messagesList.appendChild(messageItem);
+  });
+});
+
+</script>
+{% endblock %}

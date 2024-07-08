@@ -1,0 +1,33 @@
+# Ignore archivos de configuración local
+/djangopdfchatbot/settings_local.py
+
+# Ignore archivos generados por Django
+/djangopdfchatbot/__pycache__/
+/chatbot/__pycache__/
+/chatbot/migrations/
+/chatbot/raw-pdfs/
+# Ignore archivos de recursos estáticos y compilados
+/staticfiles/
+/media/
+
+# Ignore archivos de dependencias de Python
+/venv/
+/env/
+/.venv/
+/env.bak/
+
+# Ignore archivos de compilación de JavaScript y CSS
+/node_modules/
+/static/CACHE/
+/static/.webassets-cache/
+/static/.sass-cache/
+
+# Ignore archivos de IDE
+.idea/
+*.pyc
+*.pyo
+*.pyd
+.vscode/
+
+#Ignore dbsqlite
+/db.sqlite3
